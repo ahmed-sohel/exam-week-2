@@ -26,7 +26,9 @@ class Book {
 
   // TODO: Add borrowBook method
   function borrowBook() {
-    $this->availableCopies = $this->availableCopies - 1;
+    if ($this->availableCopies > 0) {
+      $this->availableCopies = $this->availableCopies - 1;
+    }
   }
  
 
@@ -77,5 +79,5 @@ $member1->borrowBook($book1);
 $member2->borrowBook($book2);
 
 
-echo "Available Copies of '{$book1->getTitle()}': {$book1->getAvailableCopies()}<br>";
-echo "Available Copies of '{$book2->getTitle()}': {$book2->getAvailableCopies()}<br>";
+echo "Available Copies of '{$book1->getTitle()}': {$book1->getAvailableCopies()} \n";
+echo "Available Copies of '{$book2->getTitle()}': {$book2->getAvailableCopies()} \n";
